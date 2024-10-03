@@ -1,5 +1,15 @@
 /** @format */
 /** @format */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
 .top-bar-main {
   display: flex;
   flex-direction: column;
@@ -10,12 +20,12 @@
   top: 0px;
   left: 0;
   z-index: 1000;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  box-shadow: rgba(48, 49, 51, 0.1) 0px 10px 10px -10px;
 }
 
 .top-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2rem 5rem;
   width: 86%;
   align-items: center;
@@ -30,7 +40,7 @@
 }
 .top-bar .navigation {
   display: flex;
-  gap: 5rem;
+  gap: 4rem;
 }
 .top-bar .navigation a {
   color: black;
@@ -59,7 +69,12 @@
   margin: 3px 0;
   transition: 0.3s;
 }
+.top-bar .icon-whastapp {
+  width: 1em;
+}
 .top-bar .contact-button {
+  display: flex;
+  gap: 0.3em;
   background-color: red;
   color: white;
   padding: 0.8rem 1.5rem;
@@ -87,16 +102,17 @@
     transform: scale(1);
   }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
   .top-bar .navigation {
     position: absolute;
-    top: 70px;
-    left: -100%;
+    top: 123px;
+    left: -115%;
     flex-direction: column;
     width: 100%;
     background-color: white;
     padding: 1rem;
     transition: left 0.3s ease;
+    border: solid red 2px;
   }
   .top-bar .navigation.active {
     left: 0;
@@ -106,5 +122,47 @@
   }
   .top-bar .contact-button {
     display: none;
+  }
+}
+
+.main-container {
+  background-image: url("/src/assets/main-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  right: 0;
+  top: 7.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.introduction {
+  text-align: center;
+  z-index: 1;
+  /* Ensures the text appears over the background */
+}
+
+.introduction h1,
+.introduction p {
+  font-size: 2rem;
+  /* Adjust this as needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Optional: Adds a semi-transparent background to the text */
+  padding: 1rem;
+}
+
+@media (max-width: 800px) {
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navigation {
+    display: flex;
+    gap: 1.5rem !important;
   }
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import whatsapp from "../assets/whatsapp.png"
 import logo from '../assets/logo.jpg'; // Ensure this path is correct
 
 function Home() {
@@ -28,9 +29,19 @@ function Home() {
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
-          <button className="contact-button">ENTRE EM CONTATO</button>
+          <button className="contact-button">
+            <img src={whatsapp} className="icon-whastapp" alt="WhatsApp" />
+            ENTRE EM CONTATO
+          </button>
         </div>
       </header>
+
+      <div className='main-container'>
+      <section id="hero" className='introduction'>
+      <h1>Welcome to My Website</h1>
+      <p>This is the main hero section with a brief introduction.</p>
+    </section>
+      </div>
     </>
   );
 }
