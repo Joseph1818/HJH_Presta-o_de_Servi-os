@@ -1,46 +1,4 @@
 /** @format */
-:root {
-  --primary-clr-400: #ff5722;
-}
-
-/** @format */
-body {
-  margin: 0;
-  padding: 0;
-  color: black;
-}
-
-body,
-body::before body::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-body {
-  background-color: #fff;
-  font-size: 1rem;
-  line-height: 1.1;
-  color: black;
-}
-
-a {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
 /** @format */
 .top-bar-main {
   display: flex;
@@ -60,20 +18,93 @@ button {
   justify-content: space-between;
   padding: 2rem 5rem;
   width: 86%;
+  align-items: center;
+  /* Navigation menu */
+  /* Hamburger menu (hidden on larger screens) */
+  /* Button with zoom-in effect and color change */
+  /* Animations */
+  /* Mobile styles */
 }
 .top-bar .logo img {
   height: 50px;
 }
 .top-bar .navigation {
   display: flex;
-  gap: 1.5rem;
+  gap: 5rem;
 }
 .top-bar .navigation a {
   color: black;
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  /* Zoom-in animation when navigation becomes active */
 }
 .top-bar .navigation a:hover {
-  color: #ff9800;
+  color: #28a745;
+  transform: scale(1.1);
+}
+.top-bar .navigation a.animate-zoom {
+  animation: zoomIn 0.5s ease forwards;
+}
+.top-bar .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.top-bar .hamburger .bar {
+  background-color: black;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+.top-bar .contact-button {
+  background-color: red;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 15rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Animation for zoom-in effect */
+}
+.top-bar .contact-button:hover {
+  background-color: #28a745;
+  transform: scale(1.1);
+}
+.top-bar .contact-button.animate-zoom {
+  animation: zoomIn 0.5s ease forwards;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media screen and (max-width: 780px) {
+  .top-bar .navigation {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    transition: left 0.3s ease;
+  }
+  .top-bar .navigation.active {
+    left: 0;
+  }
+  .top-bar .hamburger {
+    display: flex;
+  }
+  .top-bar .contact-button {
+    display: none;
+  }
 }
