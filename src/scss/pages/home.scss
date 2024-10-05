@@ -4,8 +4,9 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    /* Prevent horizontal scrolling */
 }
 
 .top-bar-main {
@@ -31,6 +32,8 @@ html {
     .logo img {
         height: 50px;
     }
+
+
 
     /* Navigation menu */
     .navigation {
@@ -71,36 +74,9 @@ html {
         }
     }
 
-    .icon-whastapp {
-        width: 1em;
-    }
 
 
 
-    /* Button with zoom-in effect and color change */
-    .contact-button {
-        display: flex;
-        gap: 0.3em;
-
-        background-color: red;
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-        border-radius: 15rem;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-
-        &:hover {
-            background-color: #28a745; // Change to green on hover
-            transform: scale(1.1); // Zoom-in effect on hover
-        }
-
-        /* Animation for zoom-in effect */
-        &.animate-zoom {
-            animation: zoomIn 0.5s ease forwards;
-        }
-    }
 
     /* Animations */
     @keyframes zoomIn {
@@ -152,6 +128,56 @@ html {
 
 }
 
+.logo2 {
+    width: 10em;
+}
+
+.icon-whastapp {
+    width: 1em;
+}
+
+
+/* Button with zoom-in effect and color change */
+.contact-button {
+    display: flex;
+    gap: 0.3em;
+
+    background-color: red;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 15rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        background-color: #28a745; // Change to green on hover
+        transform: scale(1.1); // Zoom-in effect on hover
+    }
+
+    /* Animation for zoom-in effect */
+    &.animate-zoom {
+        animation: zoomIn 0.5s ease forwards;
+    }
+}
+
+.contact-button-main {
+    display: flex;
+    gap: 0.3em;
+    background-color: red;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 15rem;
+    margin: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
 .main-container {
     background-image: url("/src/assets/main-page.jpg");
     background-repeat: no-repeat;
@@ -174,13 +200,38 @@ html {
     /* Ensures the text appears over the background */
 }
 
-.introduction h1,
+.introduction h1 {
+    color: red;
+    font-size: clamp(3rem, 1.2rem + 1.2vw, 2.5rem);
+
+
+}
+
 .introduction p {
-    font-size: 2rem;
-    /* Adjust this as needed */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Optional: Adds a semi-transparent background to the text */
-    padding: 1rem;
+    font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+    color: black;
+}
+
+.main-service {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 10em;
+    gap: 2em;
+}
+
+.child1,
+.child2,
+.child3,
+.child4,
+.child5 {
+    font-weight: 400;
+    text-align: center;
+}
+
+.child1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -195,5 +246,11 @@ html {
     .navigation {
         display: flex;
         gap: 1.5rem !important;
+    }
+
+    .main-service {
+        grid-template-columns: 2fr;
+        /* Switch to auto layout */
+        grid-template-rows: auto;
     }
 }

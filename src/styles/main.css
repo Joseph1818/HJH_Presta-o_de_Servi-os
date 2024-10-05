@@ -6,8 +6,9 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  /* Prevent horizontal scrolling */
 }
 
 .top-bar-main {
@@ -31,7 +32,6 @@ html {
   align-items: center;
   /* Navigation menu */
   /* Hamburger menu (hidden on larger screens) */
-  /* Button with zoom-in effect and color change */
   /* Animations */
   /* Mobile styles */
 }
@@ -69,29 +69,6 @@ html {
   margin: 3px 0;
   transition: 0.3s;
 }
-.top-bar .icon-whastapp {
-  width: 1em;
-}
-.top-bar .contact-button {
-  display: flex;
-  gap: 0.3em;
-  background-color: red;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 15rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  /* Animation for zoom-in effect */
-}
-.top-bar .contact-button:hover {
-  background-color: #28a745;
-  transform: scale(1.1);
-}
-.top-bar .contact-button.animate-zoom {
-  animation: zoomIn 0.5s ease forwards;
-}
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -125,6 +102,50 @@ html {
   }
 }
 
+.logo2 {
+  width: 10em;
+}
+
+.icon-whastapp {
+  width: 1em;
+}
+
+/* Button with zoom-in effect and color change */
+.contact-button {
+  display: flex;
+  gap: 0.3em;
+  background-color: red;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 15rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Animation for zoom-in effect */
+}
+.contact-button:hover {
+  background-color: #28a745;
+  transform: scale(1.1);
+}
+.contact-button.animate-zoom {
+  animation: zoomIn 0.5s ease forwards;
+}
+
+.contact-button-main {
+  display: flex;
+  gap: 0.3em;
+  background-color: red;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 15rem;
+  margin: auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
 .main-container {
   background-image: url("/src/assets/main-page.jpg");
   background-repeat: no-repeat;
@@ -147,13 +168,36 @@ html {
   /* Ensures the text appears over the background */
 }
 
-.introduction h1,
+.introduction h1 {
+  color: red;
+  font-size: clamp(3rem, 1.2rem + 1.2vw, 2.5rem);
+}
+
 .introduction p {
-  font-size: 2rem;
-  /* Adjust this as needed */
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Optional: Adds a semi-transparent background to the text */
-  padding: 1rem;
+  font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+  color: black;
+}
+
+.main-service {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 10em;
+  gap: 2em;
+}
+
+.child1,
+.child2,
+.child3,
+.child4,
+.child5 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.child1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 800px) {
@@ -164,5 +208,10 @@ html {
   .navigation {
     display: flex;
     gap: 1.5rem !important;
+  }
+  .main-service {
+    grid-template-columns: 2fr;
+    /* Switch to auto layout */
+    grid-template-rows: auto;
   }
 }
