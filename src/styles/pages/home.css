@@ -49,7 +49,7 @@ html {
   /* Zoom-in animation when navigation becomes active */
 }
 .top-bar .navigation a:hover {
-  color: #28a745;
+  color: #A23731 !important;
   transform: scale(1.1);
 }
 .top-bar .navigation a.animate-zoom {
@@ -87,7 +87,6 @@ html {
     background-color: white;
     padding: 1rem;
     transition: left 0.3s ease;
-    border: solid red 2px;
   }
   .top-bar .navigation.active {
     left: 0;
@@ -112,7 +111,7 @@ html {
 .contact-button {
   display: flex;
   gap: 0.3em;
-  background-color: red;
+  background-color: #A23731;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -123,7 +122,7 @@ html {
   /* Animation for zoom-in effect */
 }
 .contact-button:hover {
-  background-color: #28a745;
+  background-color: #A23731;
   transform: scale(1.1);
 }
 .contact-button.animate-zoom {
@@ -158,6 +157,7 @@ html {
   justify-content: center;
   align-items: center;
   color: white;
+  margin-bottom: 10em;
 }
 
 .introduction {
@@ -176,26 +176,170 @@ html {
   color: black;
 }
 
-.main-service {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.service {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 10em;
   gap: 2em;
+  padding: 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInSection 1s ease-in-out forwards;
 }
-
-.child1,
-.child2,
-.child3,
-.child4,
-.child5 {
-  font-weight: 400;
+@media (max-width: 1024px) {
+  .service {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .service {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
+}
+.service .child {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: scrollFadeIn 1s ease forwards;
+  animation-delay: var(--delay);
+  position: relative;
+}
+.service .child:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px #A23731;
+}
+.service .child p {
+  font-size: 13px;
+  font-weight: 100;
   text-align: center;
+  line-height: 1.5;
+  padding: 1em;
+}
+.service .image-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.service .image-container img.logo2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+}
+.service .image-container:hover img.logo2 {
+  transform: scale(1.1);
 }
 
-.child1 {
+@keyframes scrollFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInSection {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.box {
+  opacity: 5;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button styles */
+.hover-button .btn {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 20px;
+  border: 2px solid #A23731;
+  background-color: white;
+  color: #A23731;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.hover-button .btn .icon {
+  font-size: 1.2rem;
+  margin-right: 0.5em;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-button .btn .text {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show text and hide icon on hover */
+.hover-button .btn:hover .icon {
+  opacity: 0;
+  /* Hide icon */
+}
+
+.hover-button .btn:hover .text {
+  opacity: 1;
+  /* Show text */
+}
+
+.hover-button .btn:hover {
+  background-color: #A23731;
+  /* Change background color on hover */
+  color: white;
+  /* Change text color on hover */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.image-container img.logo2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+}
+.image-container:hover img.logo2 {
+  transform: scale(1.1);
 }
 
 @media (max-width: 800px) {
@@ -206,10 +350,5 @@ html {
   .navigation {
     display: flex;
     gap: 1.5rem !important;
-  }
-  .main-service {
-    grid-template-columns: 2fr;
-    /* Switch to auto layout */
-    grid-template-rows: auto;
   }
 }
