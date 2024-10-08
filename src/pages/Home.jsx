@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import  { useState, useEffect } from 'react';
+
 import clim from "../assets/download.jpeg"
 import whatsapp from "../assets/whatsapp.png"
+import image1 from "../assets/download.jpeg"
+import image2 from "../assets/repair.jpg"
+import slide1 from "../assets/slide1.jpg"
+import slide2 from "../assets/slide2.jpg"
+import slide3 from "../assets/slide3.jpg"
+import { FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importing Font Awesome icons
 import { useInView } from 'react-intersection-observer';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
-
-import logo from '../assets/logo.jpg'; // Ensure this path is correct
+import logo from '../assets/logo2.png'; // Ensure this path is correct
 
 function Home() {
   // Adding the state for menu toggle
@@ -76,9 +84,29 @@ function Home() {
     }
   };
 
+  const images = [slide1, slide2,slide3];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(nextImage, 3000); // Change image every 3 seconds
+    return () => clearInterval(intervalId); // Clear interval on component unmount
+  }, []);
+
 
   return (
-   <>
+    <>
 
       <main className="main-container">
         <header className="top-bar-main">
@@ -88,9 +116,9 @@ function Home() {
             </div>
             <nav className={`navigation ${isMenuOpen ? 'active' : ''}`}>
               <a href="#" onClick={toggleMenu}>Home</a>
-              <a href="#" onClick={toggleMenu}>Service</a>
-              <a href="#" onClick={toggleMenu}>Production</a>
-              <a href="#" onClick={toggleMenu}>Contact Us</a>
+              <a href="#" onClick={toggleMenu}>serviços</a>
+              <a href="#" onClick={toggleMenu}>Produção</a>
+              <a href="#" onClick={toggleMenu}>Contate-nos</a>
             </nav>
             <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
               <span className="bar"></span>
@@ -98,26 +126,39 @@ function Home() {
               <span className="bar"></span>
             </div>
             <button className="contact-button">
-              <img src={whatsapp} className="icon-whastapp" alt="WhatsApp" />
-              ENTRE EM CONTATO
-            </button>
+                    <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
+                    ENTRE EM CONTATO
+                  </button>
           </div>
         </header>
         <section className="content-wrapper">
           <div className="content">
             <div className='content-flex'>
-              <div>
-                <h1>Deixe seu ambiente sempre fresco e saudável!</h1>
-                <p>La climatisation est un véritable atout confort, quel que soit le logement. Mais il est indispensable de choisir un modèle qui soit adapté à vos besoins parmi les différents types de climatiseurs proposés sur le marché. Le climatiseur cassette, également appelé « clim plafonnier », peut constituer une option intéressante pour rafraîchir des pièces particulièrement spacieuses. Vous vous demandez si le climatiseur cassette pourrait répondre
-                   à vos besoins ? Voyons cela ensemble dans cet article…</p>
-              </div>
-              <div>
-                <button className="contact-button">
-                  <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
 
-                  <span className="button-text">ENTRE EM CONTATO</span>
-                </button>
+              <div>
+                <img className='image2' src={image2} alt="" />
               </div>
+              <div className='text-section'>
+                <div>
+                  <h1>Deixe seu ambiente sempre fresco e saudável!</h1>
+                </div>
+                <div>
+                  <p>
+                    La climatisation est un véritable atout confort, quel que soit le logement. Mais il est indispensable de choisir un modèle qui soit adapté à vos besoins parmi les différents types de climatiseurs proposés sur le marché. Le climatiseur cassette, également appelé « clim plafonnier », peut constituer une option intéressante pour rafraîchir des pièces particulièrement spacieuses. Vous vous demandez si le climatiseur cassette pourrait répondre à vos besoins ? Voyons cela ensemble dans cet article…
+                  </p>
+                </div>
+                <div>
+                  <button className="contact-button">
+                    <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
+                    ENTRE EM CONTATO
+                  </button>
+                </div>
+              </div>
+
+
+
+
+
             </div>
           </div>
         </section>
@@ -175,161 +216,180 @@ function Home() {
         </section>
 
         <div className="white-line"></div>
-
-        <section className='slide-image  '>
-          <div className='slide-text'>
-            <h1>Quem Somos ?</h1>
-            <p>Presente no mercado há mais de 50 anos, a Só-Frio oferece aos seus clientes soluções que compatibilizam economia e tecnologia.
-              Ao longo desses 50 anos, a Só-Frio forneceu e instalou sistemas para beneficiar indústrias, hospitais, centro administrativos, bancos, teatros, supermercados, hotéis, telecomunicações, residências, entre outros.
-              Qualidade, pontualidade, tecnologia e segurança,
-              determinam a diretriz da Só-Frio. O perfeito atendimento das necessidades de nossos clientes, aliada a experência e criatividade de nossos profissionais, permite otimizar economicamente o
-              investimento a ser realizado.
-            </p>
-          </div>
-          <div>
-
-            <img src={clim} alt="clim" />
-
-          </div>
-        </section>
+        <section className='slide-image'>
+      <div className='slide-text'>
+        <h1>Quem Somos ?</h1>
+        <p>
+          Presente no mercado há mais de 50 anos, a Só-Frio oferece aos seus clientes soluções que compatibilizam economia e tecnologia.
+          Ao longo desses 50 anos, a Só-Frio forneceu e instalou sistemas para beneficiar indústrias, hospitais, centro administrativos, bancos, teatros, supermercados, hotéis, telecomunicações, residências, entre outros.
+          Qualidade, pontualidade, tecnologia e segurança,
+          determinam a diretriz da Só-Frio. O perfeito atendimento das necessidades de nossos clientes, aliada a experiência e criatividade de nossos profissionais, permite otimizar economicamente o investimento a ser realizado.
+        </p>
+      </div>
+      <div className='slider-container'>
+        <img src={images[currentIndex]} alt="clim" className='slider-image' />
+        
+        <div className='slide-btn'>
+        {/* <button onClick={prevImage} className='slider-button'>Previous</button> */}
+        {/* <button onClick={nextImage} className='slider-button'>Next</button> */}
+        </div>
+      </div>
+    </section>
 
         <div className="white-line"></div>
         <h1 className='title-service'>Soluções em Ar Condicionado!</h1>
         <section className="image-section">
-  <div className="child">
-    <div className="image-container">
-      <img src={logo} className="logo2" alt="Service 1" />
-    </div>
-  </div>
-  <div className="child">
-    <div className="image-container">
-      <img src={logo} className="logo2" alt="Service 2" />
-    </div>
-  </div>
-  <div className="child">
-    <div className="image-container">
-      <img src={logo} className="logo2" alt="Service 3" />
-    </div>
-  </div>
- 
-  <div className="child">
-    <div className="image-container">
-      <img src={logo} className="logo2" alt="Service 5" />
-    </div>
-  </div>
-</section>
-
-    
-
-<section className="contact-us-section">
-      <div className="contact-container">
-        <h2>FAÇA AGORA MESMO SEU ORÇAMENTO!</h2>
-        {isSubmitted ? (
-          <p className="success-message">Obrigado! Entraremos em contato em breve.</p>
-        ) : (
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="full-name">Nome Completo</label>
-              <input
-                type="text"
-                id="full-name"
-                name="fullName"
-                placeholder="Seu nome completo"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-              />
-              {errors.fullName && <p className="error-message">{errors.fullName}</p>}
+          <div className="child">
+            <div className="image-container">
+              <img src={logo} className="logo2" alt="Service 1" />
             </div>
-
-            <div className="form-group">
-              <label htmlFor="company">Empresa</label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                placeholder="Sua empresa"
-                value={formData.company}
-                onChange={handleChange}
-              />
+          </div>
+          <div className="child">
+            <div className="image-container">
+              <img src={logo} className="logo2" alt="Service 2" />
             </div>
-
-            <div className="form-group">
-              <label htmlFor="address">Endereço</label>
-              <input
-                type="text"
-                id="address"
-                name="address"
-                placeholder="Seu endereço"
-                value={formData.address}
-                onChange={handleChange}
-                required
-              />
-              {errors.address && <p className="error-message">{errors.address}</p>}
+          </div>
+          <div className="child">
+            <div className="image-container">
+              <img src={logo} className="logo2" alt="Service 3" />
             </div>
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="city">Cidade</label>
-              <input
-                type="text"
-                id="city"
-                name="city"
-                placeholder="Sua cidade"
-                value={formData.city}
-                onChange={handleChange}
-                required
-              />
-              {errors.city && <p className="error-message">{errors.city}</p>}
+          <div className="child">
+            <div className="image-container">
+              <img src={logo} className="logo2" alt="Service 5" />
             </div>
+          </div>
+        </section>
 
-            <div className="form-group">
-              <label htmlFor="phone">Telefone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Seu telefone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-              />
-              {errors.phone && <p className="error-message">{errors.phone}</p>}
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Seu email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              {errors.email && <p className="error-message">{errors.email}</p>}
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="observations">Observações</label>
-              <textarea
-                id="observations"
-                name="observations"
-                rows="4"
-                placeholder="Suas observações"
-                value={formData.observations}
-                onChange={handleChange}
-                required
-              ></textarea>
-              {errors.observations && <p className="error-message">{errors.observations}</p>}
-            </div>
+        <section className="contact-us-section">
+          <div className="contact-container">
+            <h2>FAÇA AGORA MESMO SEU ORÇAMENTO!</h2>
+            {isSubmitted ? (
+              <p className="success-message">Obrigado! Entraremos em contato em breve.</p>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="full-name">Nome Completo</label>
+                  <input
+                    type="text"
+                    id="full-name"
+                    name="fullName"
+                    placeholder="Seu nome completo"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.fullName && <p className="error-message">{errors.fullName}</p>}
+                </div>
 
-            <button type="submit" className="submit-button">Enviar</button>
-          </form>
-        )}
+                <div className="form-group">
+                  <label htmlFor="company">Empresa</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Sua empresa"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="address">Endereço</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Seu endereço"
+                    value={formData.address}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.address && <p className="error-message">{errors.address}</p>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="city">Cidade</label>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Sua cidade"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.city && <p className="error-message">{errors.city}</p>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="phone">Telefone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Seu telefone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.phone && <p className="error-message">{errors.phone}</p>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Seu email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.email && <p className="error-message">{errors.email}</p>}
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="observations">Observações</label>
+                  <textarea
+                    id="observations"
+                    name="observations"
+                    rows="4"
+                    placeholder="Suas observações"
+                    value={formData.observations}
+                    onChange={handleChange}
+                    required
+                  ></textarea>
+                  {errors.observations && <p className="error-message">{errors.observations}</p>}
+                </div>
+
+                <button type="submit" className="submit-button">Enviar</button>
+              </form>
+            )}
+          </div>
+        </section>
+        <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-social">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaFacebook />
+          </a>
+          <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaWhatsapp />
+          </a>
+          <a href="mailto:youremail@example.com" className="social-icon">
+            <FaEnvelope />
+          </a>
+        </div>
+        <div className="footer-copyright">
+          &copy; {new Date().getFullYear()} Só-Frio. Todos os direitos reservados.
+        </div>
       </div>
-    </section>
-
+    </footer>
 
       </main>
     </>
