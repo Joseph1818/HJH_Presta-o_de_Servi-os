@@ -1,375 +1,5 @@
-// body,
-// html {
-//     margin: 0;
-//     padding: 0;
-//     width: 100%;
-//     height: 100%;
-//     font-weight: 600;
-//     font-family: 'Poppins', sans-serif;
-//     overflow-x: hidden;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap');
 
-
-
-
-// /* Button with zoom-in effect and color change */
-// .contact-button {
-//     display: flex;
-//     gap: 0.3em;
-
-//     background-color: #A23731;
-//     color: white;
-//     padding: 0.8rem 1.5rem;
-//     border: none;
-//     cursor: pointer;
-//     font-size: 1rem;
-//     border-radius: 15rem;
-//     transition: background-color 0.3s ease, transform 0.3s ease;
-
-//     &:hover {
-//         background-color: #A23731;
-//         transform: scale(1.1);
-
-//         // Zoom-in effect on hover
-//     }
-
-//     /* Animation for zoom-in effect */
-//     &.animate-zoom {
-//         animation: zoomIn 0.5s ease forwards;
-//     }
-// }
-
-// .contact-button-main {
-//     display: flex;
-//     gap: 0.3em;
-//     background-color: red;
-//     color: white;
-//     padding: 0.8rem 1.5rem;
-//     border: none;
-//     cursor: pointer;
-//     font-size: 1rem;
-//     border-radius: 15rem;
-//     margin: auto;
-//     transition: background-color 0.3s ease, transform 0.3s ease;
-// }
-
-
-
-// .main-container {
-//     background-image: url("/src/assets/main-page.jpg");
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center center;
-//     width: 100vw;
-//     height: 80vh;
-//     position: relative;
-//     right: 0;
-//     top: 7.5em;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     color: white;
-//     margin-bottom: 10em;
-// }
-
-// .introduction {
-//     text-align: center;
-//     z-index: 1;
-//     /* Ensures the text appears over the background */
-// }
-
-// .introduction h1 {
-//     color: red;
-//     font-size: clamp(3rem, 1.2rem + 1.2vw, 2.5rem);
-
-
-// }
-
-// .introduction p {
-//     font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
-//     color: black;
-// }
-
-// html,
-// body {
-//     margin: 0;
-//     padding: 0;
-//     width: 100%;
-//     height: 100%;
-//     font-family: 'Poppins', sans-serif;
-//     overflow-x: hidden;
-// }
-
-// .service {
-//     display: grid;
-//     grid-template-columns: repeat(5, 1fr); // 5 columns on larger screens
-//     gap: 2em;
-//     padding: 2em;
-//     max-width: 1200px;
-//     margin: 0 auto;
-
-//     // Optional animation for the section
-//     animation: fadeInSection 1s ease-in-out forwards;
-
-//     @media (max-width: 1024px) {
-//         grid-template-columns: repeat(2, 1fr); // 2 columns on tablets
-//         justify-content: center;
-//     }
-
-//     @media (max-width: 768px) {
-//         grid-template-columns: 1fr; // 1 column on mobile
-//         padding: 1em;
-//     }
-
-//     .child {
-//         background-color: #f9f9f9;
-//         border-radius: 8px;
-//         overflow: hidden;
-//         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//         transition: transform 0.3s ease, box-shadow 0.3s ease;
-//         opacity: 0; // Start invisible
-//         transform: translateY(50px); // Start with a slight offset for animation
-//         animation: scrollFadeIn 1s ease forwards; // Apply animation
-//         animation-delay: var(--delay); // Delay animation based on index
-//         position: relative;
-
-//         &:hover {
-//             transform: translateY(-5px);
-//             box-shadow: 0 8px 12px #A23731;
-//         }
-
-//         p {
-//             font-size: 13px;
-//             font-weight: 100;
-//             text-align: center;
-//             line-height: 1.5;
-//             padding: 1em;
-//         }
-//     }
-
-//     .image-container {
-//         position: relative;
-//         width: 100%;
-//         height: 150px;
-//         overflow: hidden;
-
-//         img.logo2 {
-//             width: 100%;
-//             height: 100%;
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             transition: transform 0.5s ease;
-//         }
-
-//         &:hover img.logo2 {
-//             transform: scale(1.1);
-//         }
-//     }
-// }
-
-// // Keyframes for fade-in scroll animation
-// @keyframes scrollFadeIn {
-//     0% {
-//         opacity: 0;
-//         transform: translateY(50px); // Start from below
-//     }
-
-//     100% {
-//         opacity: 1;
-//         transform: translateY(0); // Move into place
-//     }
-// }
-
-// // Optional animation for the section itself
-// @keyframes fadeInSection {
-//     0% {
-//         opacity: 0;
-//     }
-
-//     100% {
-//         opacity: 1;
-//     }
-// }
-
-
-// .box {
-//     opacity: 5;
-//     transform: translateY(100px);
-//     transition: opacity 0.5s ease, transform 0.5s ease;
-// }
-
-// .box.visible {
-//     opacity: 1;
-//     transform: translateY(0);
-// }
-
-// /* Button styles */
-// .hover-button .btn {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     position: relative;
-//     padding: 10px 20px;
-//     border: 2px solid #A23731;
-//     background-color: white;
-//     color: #A23731;
-//     font-size: 16px;
-//     border-radius: 25px;
-//     cursor: pointer;
-//     transition: all 0.3s ease-in-out;
-//     overflow: hidden;
-// }
-
-// .hover-button .btn .icon {
-//     font-size: 1.2rem;
-//     margin-right: 0.5em;
-//     transition: opacity 0.3s ease-in-out;
-// }
-
-// .hover-button .btn .text {
-//     opacity: 0;
-//     white-space: nowrap;
-//     transition: opacity 0.3s ease-in-out;
-// }
-
-// /* Show text and hide icon on hover */
-// .hover-button .btn:hover .icon {
-//     opacity: 0;
-//     /* Hide icon */
-// }
-
-// .hover-button .btn:hover .text {
-//     opacity: 1;
-//     /* Show text */
-// }
-
-// .hover-button .btn:hover {
-//     background-color: #A23731;
-//     /* Change background color on hover */
-//     color: white;
-//     /* Change text color on hover */
-// }
-
-
-// .contact-button {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 0.8rem 1.5rem;
-//     background-color: #A23731;
-//     border: none;
-//     border-radius: 0.5rem;
-//     cursor: pointer;
-//     position: relative;
-//     color: white;
-//     transition: background-color 0.3s ease;
-//     overflow: hidden;
-// }
-
-// .icon-whatsapp {
-//     width: 1.5rem;
-//     /* Adjust icon size */
-//     margin-right: 0.5rem;
-//     /* Space between icon and text */
-//     transition: transform 0.3s ease;
-// }
-
-// .button-text {
-//     opacity: 0;
-//     max-width: 0;
-//     overflow: hidden;
-//     white-space: nowrap;
-//     transition: opacity 0.3s ease, max-width 0.3s ease;
-// }
-
-// .contact-button:hover {
-//     background-color: #333;
-//     /* Change background on hover */
-// }
-
-// .contact-button:hover .button-text {
-//     opacity: 1;
-//     max-width: 200px;
-//     /* Adjust as needed */
-// }
-
-// .contact-button:hover .icon-whatsapp {
-//     transform: translateX(-10px);
-//     /* Moves icon left on hover */
-// }
-
-
-
-// .image-container {
-//     position: relative;
-//     width: 100%; // Full width
-//     height: 150px; // Fixed height for the image area
-//     overflow: hidden; // Hide overflow of the image
-
-//     img.logo2 {
-//         width: 100%; // Full width for image
-//         height: 100%; // Full height for image
-//         position: absolute; // Position absolute for layer control
-//         top: 0; // Align to the top
-//         left: 0; // Align to the left
-//         transition: transform 0.5s ease; // Animation for scaling
-//     }
-
-//     &:hover img.logo2 {
-//         transform: scale(1.1); // Slight zoom effect on hover
-//     }
-// }
-
-
-// .white-line {
-//     height: 2px;
-//     width: 50%;
-//     margin: auto;
-//     background: linear-gradient(to left, transparent, #b30b0b, transparent);
-//     border: none;
-// }
-
-// .slide-image {}
-
-// .slide-text p {
-//     font-weight: 100;
-
-// }
-
-
-
-
-// @media (max-width :800px) {
-
-//     .top-bar {
-//         display: flex;
-//         justify-content: space-between;
-//     }
-
-//     .navigation {
-//         display: flex;
-//         gap: 1.5rem !important;
-//     }
-
-//     .slide-image {
-//         display: flex;
-//         margin: 0 auto;
-//         justify-content: center;
-//         flex-direction: column;
-//     }
-
-//     .slide-text p {
-//         font-weight: 100;
-//         width: 80%;
-//         text-align: center;
-
-//     }
-
-
-// }
-
-/* App.css */
 html,
 body {
     margin: 0;
@@ -377,22 +7,18 @@ body {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-
-
 }
 
 .top-bar-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #575756;
     width: 100vw;
-    position: fixed;
+    background-color: #A23731;
     top: 0px;
     left: 0;
-    z-index: 1000;
     margin-bottom: 10em;
-    box-shadow: rgba(48, 49, 51, 0.1) 0px 10px 10px -10px;
+    box-shadow: rgba(88, 89, 81, 0.1) 0px 10px 10px -10px;
 }
 
 .top-bar {
@@ -402,30 +28,40 @@ body {
     padding: 2rem 5rem; // Adjusted padding for better spacing
     width: 86%;
     align-items: center; // Center items vertically
-    margin-bottom: 1rem;
-    /* Space between the nav items */
 
     .logo img {
         height: 50px;
     }
 
-
-
-    /* Navigation menu */
     .navigation {
         display: flex;
         gap: 4rem;
 
         a {
-            color: black;
+            color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            position: relative; // Required for positioning the pseudo-element
             transition: color 0.3s ease, transform 0.3s ease;
             display: inline-block;
 
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -4px; // Position the underline just below the text
+                width: 0;
+                height: 2px;
+                background-color: white; // The color of the underline
+                transition: width 0.3s ease;
+            }
+
             &:hover {
-                color: #A23731 !important; // Green color change on hover
                 transform: scale(1.1); // Slight zoom on hover
+
+                &::after {
+                    width: 100%; // Expand the underline to full width
+                }
             }
 
             /* Zoom-in animation when navigation becomes active */
@@ -434,6 +70,7 @@ body {
             }
         }
     }
+
 
     /* Hamburger menu (hidden on larger screens) */
     .hamburger {
@@ -479,7 +116,7 @@ body {
             left: -115%;
             flex-direction: column;
             width: 100%;
-            background-color: white;
+            background-color: #A23731;
             padding: 1rem;
             transition: left 0.3s ease;
 
@@ -501,6 +138,10 @@ body {
     }
 
 
+}
+
+.content-intro p {
+    width: 2em;
 }
 
 .logo2 {
@@ -526,11 +167,14 @@ body {
     position: relative;
     width: 100vw;
     height: 30em;
-    background-image: url("/src/assets/main-page.jpg");
+    background-color: #A23731;
+    // background-image: url("/src/assets/main-page.jpg");
     display: flex;
     justify-content: center;
     padding: 2rem 0;
-    margin-top: 8em;
+    bottom: 10em;
+    height: auto;
+    margin-bottom: -5em;
 }
 
 .content {
@@ -545,9 +189,93 @@ body {
 
 .content-flex {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 8em;
     align-items: center;
+    position: relative;
+    bottom: 2em;
+
+
 }
+
+.image2 {
+    max-width: 70%;
+}
+
+.contact-button {
+    background-color: #575756;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: space-around;
+    margin: auto;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif; // Apply Roboto to the entire section
+
+    h1 {
+        font-family: 'Montserrat', sans-serif; // Use Montserrat for heading
+        font-size: clamp(3rem, 1.2rem + 1.2vw, 1.2rem);
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: black; // Dark blue for the heading
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: white; // Slightly lighter color for body text
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-button {
+        background-color: #575756;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-family: 'Montserrat', sans-serif; // Consistent font for the button
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #333; // Change color on hover
+        }
+
+        .icon-whatsapp {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+
+// .text-section h1 {
+//     font-size: clamp(3.9rem, 1.2rem + 1.2vw, 1.2rem);
+// }
+
+// .text-section p {
+//     font-size: large;
+//     line-height: 100%
+// }
 
 /* Button with zoom-in effect and color change */
 .hover-button .btn {
@@ -597,20 +325,7 @@ body {
 }
 
 
-.contact-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.5rem;
-    background-color: #A23731;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    position: relative;
-    color: white;
-    transition: background-color 0.3s ease;
-    overflow: hidden;
-}
+
 
 .icon-whatsapp {
     width: 1.5rem;
@@ -768,6 +483,13 @@ body {
 
 }
 
+.slider-image {
+    width: 600px;
+    /* Adjust the size to your needs */
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
 .slide-text p {
     font-weight: 100;
     font-size: large;
@@ -779,6 +501,11 @@ body {
     color: #A23731;
     font-size: clamp(2.5rem, 0rem + 0vw, 0rem);
 
+}
+
+.slide-btn {
+    display: flex;
+    gap: 1em;
 }
 
 /* Image Section */
@@ -962,6 +689,45 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
+
+.footer {
+    background-color: #575756;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #A23731;
+    /* Change color on hover */
+}
+
+.footer-copyright {
+    font-size: 14px;
+}
+
 
 /* Mobile styles */
 @media (max-width: 600px) {
