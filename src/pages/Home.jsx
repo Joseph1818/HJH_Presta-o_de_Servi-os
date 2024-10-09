@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import clim from "../assets/download.jpeg"
 import whatsapp from "../assets/whatsapp.png"
@@ -7,9 +7,14 @@ import image2 from "../assets/repair.jpg"
 import slide1 from "../assets/slide1.jpg"
 import slide2 from "../assets/slide2.jpg"
 import slide3 from "../assets/slide3.jpg"
+import image3 from "../assets/main.jpg"
+import clean from "../assets/clean.jpg"
+import fixe from "../assets/reparat.jpg"
+import instalation from "../assets/instalation.jpg"
+import  repair  from "../assets/reparation.jpg"
 import { FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importing Font Awesome icons
 import { useInView } from 'react-intersection-observer';
-import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import logo from '../assets/logo2.png'; // Ensure this path is correct
@@ -84,7 +89,7 @@ function Home() {
     }
   };
 
-  const images = [slide1, slide2,slide3];
+  const images = [slide1, slide2, slide3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -126,52 +131,101 @@ function Home() {
               <span className="bar"></span>
             </div>
             <button className="contact-button">
-                    <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
-                    ENTRE EM CONTATO
-                  </button>
+              <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
+              ENTRE EM CONTATO
+            </button>
           </div>
         </header>
         <section className="content-wrapper">
           <div className="content">
-            <div className='content-flex'>
-
-              <div>
-                <img className='image2' src={image2} alt="" />
-              </div>
-              <div className='text-section'>
-                <div>
-                  <h1>Deixe seu ambiente sempre fresco e saudável!</h1>
-                </div>
-                <div>
-                  <p>
-                    La climatisation est un véritable atout confort, quel que soit le logement. Mais il est indispensable de choisir un modèle qui soit adapté à vos besoins parmi les différents types de climatiseurs proposés sur le marché. Le climatiseur cassette, également appelé « clim plafonnier », peut constituer une option intéressante pour rafraîchir des pièces particulièrement spacieuses. Vous vous demandez si le climatiseur cassette pourrait répondre à vos besoins ? Voyons cela ensemble dans cet article…
-                  </p>
-                </div>
-                <div>
-                  <button className="contact-button">
-                    <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
-                    ENTRE EM CONTATO
-                  </button>
-                </div>
-              </div>
+ <img src={image3}  alt="Technician repairing an air conditioner" className="hero-image" />
+  <div className="hero-text">
+    <h1>Seu conforto e economia, nossa prioridade!</h1>
+<button className="contact-button cta-button">
+              <img src={whatsapp} className=" icon-whatsapp" alt="WhatsApp" />
+              ENTRE EM CONTATO
+            </button>  </div>
 
 
-
-
-
-            </div>
+            
           </div>
         </section>
 
-        <section ref={ref} className={`service box ${inView ? 'visible' : ''}`} >
+ <section className="who-we-are-section">
+  <div className="who-we-are-content">
+    <div className="who-we-are-text">
+      <h1>Quem Somos?</h1>
+      <p>
+        A HJH. Prestação de Serviços é especialista em manutenção de sistemas de ar condicionado, 
+        câmaras frigoríficas e soluções de auto frio. Oferecemos serviços de alta qualidade para garantir 
+        o seu conforto, economia de energia e prolongar a vida útil dos seus equipamentos.
+      </p>
+      <button className="cta-button">Conheça Nossos Serviços</button>
+    </div>
+    <img src={slide2} alt="Air conditioning technician" className=" slider-image who-we-are-image" />
+  </div>
+</section>
+
+<section className="services-section">
+  <h1>Principais Serviços que Oferecemos</h1>
+  <div className="services-grid">
+    <div className="service-item">
+      <img src={repair} className='service-image' alt="Manutenção Preventiva" />
+      <h3>Manutenção Preventiva</h3>
+      <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos de refrigeração e climatização.</p>
+    </div>
+    <div className="service-item">
+      <img src={fixe} alt="Reparos e Correções" />
+      <h3>Reparos e Correções</h3>
+      <p>Resolvemos qualquer problema técnico com agilidade, garantindo que o seu equipamento volte a funcionar em perfeito estado rapidamente.</p>
+    </div>
+    <div className="service-item">
+    <img src={clean} alt="Limpeza e Higienização" />
+      <h3>Limpeza e Higienização</h3>
+      <p>Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de sujeira nos seus sistemas.</p>
+    </div>
+    <div className="service-item">
+      <img src={instalation} alt="Instalação de Novos Equipamentos" />
+      <h3>Instalação de Novos Equipamentos</h3>
+      <p>Soluções personalizadas para cada ambiente, com o dimensionamento adequado para sua casa, empresa ou veículo.</p>
+    </div>
+  </div>
+  <button className="cta-button">Fale Conosco para Mais Detalhes</button>
+</section>
+
+<section className="why-choose-us">
+  <h1>Vantagens de Trabalhar Conosco</h1>
+  <ul>
+    <li><strong>Técnicos Qualificados e Certificados:</strong> Nossa equipe é composta por profissionais com vasta experiência.</li>
+    <li><strong>Atendimento Rápido e Eficiente:</strong> Garantimos respostas ágeis para que o seu conforto não seja comprometido.</li>
+    <li><strong>Peças Originais e de Alta Qualidade:</strong> Utilizamos somente peças de qualidade superior.</li>
+    <li><strong>Soluções Personalizadas:</strong> Desenvolvemos planos de manutenção ajustados às suas necessidades.</li>
+  </ul>
+</section>
+
+
+
+
+
+<section className="extend-equipment">
+  <h1>Prolongue a Vida Útil dos Seus Equipamentos</h1>
+  <p>
+    Prolongue a vida útil dos seus equipamentos de refrigeração com uma manutenção regular e especializada. 
+    Seja no seu carro, empresa, ou casa, a HJH. Prestação de Serviços está pronta para garantir o máximo desempenho.
+  </p>
+  <button className="cta-button">Saiba Mais</button>
+</section>
+
+
+
+
+        {/* <section ref={ref} className={`service box ${inView ? 'visible' : ''}`} >
           <div className='child'>
             <div className="image-container">
               <img src={logo} className="logo2" alt="Service 1" />
             </div>
-            <p>A equipe qualificada da Só Frio realiza a instalação de
-              todos os tipos de equipamentos condicionadores de ar.
-              Realizamos vistoria no local de instalação para o correto
-              dimensionamento do tipo de equipamento.
+            <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos
+              de refrigeração e climatização.
             </p>
           </div>
           <div className='child'>
@@ -179,9 +233,8 @@ function Home() {
               <img src={logo} className="logo2" alt="Service 2" />
             </div>
             <p>
-              Não deixe para fazer a manutenção de seu equipamento somente depois que ele quebrou.
-              Com a manutenção preventiva, você aumenta a vida útil de seu equipamento mantendo seus
-              componentes em perfeito estado.
+              Resolvemos qualquer problema técnico com agilidade, garantindo que o seu
+              equipamento volte a funcionar em perfeito estado rapidamente.
             </p>
           </div>
           <div className='child'>
@@ -189,56 +242,27 @@ function Home() {
               <img src={logo} className="logo2" alt="Service 3" />
             </div>
             <p>
-              A Só Frio possui a mais completa equipe de profissionais, com comprovada
-              experiência, para fornecer e instalar sistemas de HVAC centrais desde
-              pequenos sistemas até obras comerciais/indústrias complexas.
+              Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de
+              sujeira nos seus sistemas.
             </p>
           </div>
           <div className='child'>
             <div className="image-container">
               <img src={logo} className="logo2" alt="Service 4" />
             </div>
-            <p>Na Só Frio você encontra uma grande variedade de equipamentos de ar
-              condicionados, além do melhor atendimento e condições exclusivas. Entre
-              em contato com nossa equipe e confira nossos modelos.
+            <p> Soluções personalizadas para cada ambiente, com o dimensionamento adequado para
+              sua casa, empresa ou veículo.
+
             </p>
           </div>
-          <div className='child'>
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 5" />
-            </div>
-            <p>
-              Para saber mais sobre o sistema VRF/VRV, entre em contato
-              e solicite uma visita Técnica com nossos Engenheiros. Para
-              maiores informações, entre em contato com nossa equipe de atendimento.
-            </p>
-          </div>
-        </section>
+          
+        </section> */}
 
         <div className="white-line"></div>
-        <section className='slide-image'>
-      <div className='slide-text'>
-        <h1>Quem Somos ?</h1>
-        <p>
-          Presente no mercado há mais de 50 anos, a Só-Frio oferece aos seus clientes soluções que compatibilizam economia e tecnologia.
-          Ao longo desses 50 anos, a Só-Frio forneceu e instalou sistemas para beneficiar indústrias, hospitais, centro administrativos, bancos, teatros, supermercados, hotéis, telecomunicações, residências, entre outros.
-          Qualidade, pontualidade, tecnologia e segurança,
-          determinam a diretriz da Só-Frio. O perfeito atendimento das necessidades de nossos clientes, aliada a experiência e criatividade de nossos profissionais, permite otimizar economicamente o investimento a ser realizado.
-        </p>
-      </div>
-      <div className='slider-container'>
-        <img src={images[currentIndex]} alt="clim" className='slider-image' />
-        
-        <div className='slide-btn'>
-        {/* <button onClick={prevImage} className='slider-button'>Previous</button> */}
-        {/* <button onClick={nextImage} className='slider-button'>Next</button> */}
-        </div>
-      </div>
-    </section>
+       
 
         <div className="white-line"></div>
-        <h1 className='title-service'>Soluções em Ar Condicionado!</h1>
-        <section className="image-section">
+        {/* <section className="image-section">
           <div className="child">
             <div className="image-container">
               <img src={logo} className="logo2" alt="Service 1" />
@@ -260,7 +284,7 @@ function Home() {
               <img src={logo} className="logo2" alt="Service 5" />
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 
@@ -373,23 +397,23 @@ function Home() {
           </div>
         </section>
         <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-social">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaFacebook />
-          </a>
-          <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <FaWhatsapp />
-          </a>
-          <a href="mailto:youremail@example.com" className="social-icon">
-            <FaEnvelope />
-          </a>
-        </div>
-        <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} Só-Frio. Todos os direitos reservados.
-        </div>
-      </div>
-    </footer>
+          <div className="footer-container">
+            <div className="footer-social">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FaFacebook />
+              </a>
+              <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <FaWhatsapp />
+              </a>
+              <a href="mailto:youremail@example.com" className="social-icon">
+                <FaEnvelope />
+              </a>
+            </div>
+            <div className="footer-copyright">
+              &copy; {new Date().getFullYear()} Só-Frio. Todos os direitos reservados.
+            </div>
+          </div>
+        </footer>
 
       </main>
     </>
