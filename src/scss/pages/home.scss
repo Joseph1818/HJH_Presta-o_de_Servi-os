@@ -137,7 +137,9 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    background-color: #e63946;
+    // background-color: #e63946;
+    background-color: transparent;
+    z-index: 1000;
     top: 0px;
     left: 0;
     margin-bottom: 10em;
@@ -161,8 +163,9 @@ body {
         gap: 4rem;
 
         a {
-            color: white;
+            color: #E63946;
             text-decoration: none;
+            font-weight: 500;
             font-size: 1.2rem;
             position: relative; // Required for positioning the pseudo-element
             transition: color 0.3s ease, transform 0.3s ease;
@@ -180,7 +183,8 @@ body {
             }
 
             &:hover {
-                transform: scale(1.1); // Slight zoom on hover
+                transform: scale(1.1);
+                color: white; // Slight zoom on hover
 
                 &::after {
                     width: 100%; // Expand the underline to full width
@@ -298,15 +302,14 @@ body {
     background-size: 100em;
     justify-content: center;
     padding: 2rem 0;
-
-    bottom: 10em;
+    bottom: 20em;
     height: 50rem;
-    margin-bottom: -5em;
+    margin-bottom: -18em;
 }
 
 .content {
     text-align: center;
-    color: white;
+    color: #A23731;
     /* White text for contrast */
     padding: 2rem;
     width: 100%;
@@ -329,19 +332,7 @@ body {
     height: 22em;
 }
 
-.contact-button {
-    background-color: #575756;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-family: "Montserrat", sans-serif;
-    transition: background-color 0.3s ease;
-}
+
 
 
 .text-section {
@@ -367,29 +358,87 @@ body {
         margin-bottom: 1.5rem;
     }
 
-    .contact-button {
-        background-color: #575756;
-        color: white;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        font-size: 1.1rem;
-        font-family: 'Montserrat', sans-serif; // Consistent font for the button
-        transition: background-color 0.3s ease;
 
-        &:hover {
-            background-color: #333; // Change color on hover
-        }
 
-        .icon-whatsapp {
-            width: 20px;
-            height: 20px;
-            margin-right: 0.5rem;
-        }
+
+}
+
+.contact-button {
+    background-color: transparent;
+    border: solid 2px #E63946 !important;
+    color: #E63946;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease;
+
+    .icon-whatsapp {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
     }
+}
+
+.contact-button:hover {
+    background-color: #e63946;
+    color: white;
+    /* Change background on hover */
+}
+
+.contact-button:hover .button-text {
+    opacity: 1;
+    max-width: 200px;
+    /* Adjust as needed */
+}
+
+.contact-button:hover .icon-whatsapp {
+    transform: translateX(-10px);
+    /* Moves icon left on hover */
+}
+
+
+.contact-button-content {
+    background-color: transparent;
+    border: solid 2px #E63946 !important;
+    color: #E63946;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    transition: background-color 0.3s ease;
+
+    .icon-whatsapp {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.5rem;
+    }
+}
+
+.contact-button-content:hover {
+    background-color: #e63946;
+    color: white;
+    /* Change background on hover */
+}
+
+.contact-button-content:hover .button-text {
+    opacity: 1;
+    max-width: 200px;
+    /* Adjust as needed */
+}
+
+.contact-button-content:hover .icon-whatsapp {
+    transform: translateX(-10px);
+    /* Moves icon left on hover */
 }
 
 .services-section {
@@ -423,7 +472,7 @@ body {
 
 .service-item h3 {
     font-size: 1.8rem;
-    color: #f44336;
+    color: #e63946;
     margin-bottom: 10px;
 }
 
@@ -433,7 +482,7 @@ body {
 }
 
 .service-item:hover {
-    background-color: #f44336;
+    background-color: #e63946;
     color: #fff;
     transform: translateY(-10px);
 }
@@ -450,87 +499,148 @@ body {
     border-radius: 8px;
 }
 
-.why-choose-us {
-    padding: 3rem;
-    text-align: center;
 
-    margin-top: 2em;
+.why-choose-us {
+    padding: 40px;
+    border: solid #e63946 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    /* Initial state for animation */
+    transform: translateY(20px);
+    /* Slide in effect */
+    animation: fadeInUp 0.8s forwards;
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+    /* Animation on load */
 }
 
 .why-choose-us h1 {
+    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
     color: #333;
 }
 
 .why-choose-us ul {
     list-style-type: none;
     padding: 0;
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: left;
 }
 
-.why-choose-us ul li {
+.why-choose-us li {
+    padding: 15px;
+    margin: 10px 0;
     background-color: #fff;
-    margin-bottom: 1.5rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-left: 5px solid #e63946;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.why-choose-us ul li:hover {
-    transform: translateY(-5px);
+.why-choose-us li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px #e63946;
 }
 
-.why-choose-us ul li strong {
-    color: #e63946;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.5rem;
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
+    .why-choose-us {
+        padding: 20px;
+    }
+
     .why-choose-us h1 {
         font-size: 2rem;
     }
-
-    .why-choose-us ul li {
-        padding: 1rem;
-    }
 }
 
 
-
 .extend-equipment {
-    padding: 40px;
+    background-color: #f9f9f9;
+    margin-bottom: 5em;
+    padding: 40px 20px;
     text-align: center;
-    background-color: #f4f4f4;
-
-    /* Light background to distinguish the section */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .extend-equipment h1 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
 .extend-equipment p {
     font-size: 1.2rem;
-    color: #666;
-    line-height: 1.6;
+    color: #555;
     margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    animation: slideInUp 1.5s ease-out forwards;
 }
+
+.extend-equipment .cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.extend-equipment .cta-button:hover {
+    background-color: #d62839;
+}
+
+.extend-equipment:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px #e63946;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .cta-button {
     padding: 10px 20px;
-    background-color: #f44336;
+    background-color: #e63946;
     color: white;
     border: none;
     border-radius: 5px;
@@ -541,7 +651,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #d32f2f;
+    background-color: #e63946;
 }
 
 
@@ -557,7 +667,7 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #d62828;
+    background-color: #e63946;
 }
 
 /* Responsive design for smaller screens */
@@ -592,9 +702,9 @@ body {
     justify-content: center;
     position: relative;
     padding: 10px 20px;
-    border: 2px solid #A23731;
+    border: 2px solid #e63946;
     background-color: white;
-    color: #A23731;
+    color: #e63946;
     font-size: 16px;
     border-radius: 25px;
     cursor: pointer;
@@ -626,10 +736,8 @@ body {
 }
 
 .hover-button .btn:hover {
-    background-color: #A23731;
-    /* Change background color on hover */
+    background-color: #e63946;
     color: white;
-    /* Change text color on hover */
 }
 
 
@@ -651,21 +759,6 @@ body {
     transition: opacity 0.3s ease, max-width 0.3s ease;
 }
 
-.contact-button:hover {
-    background-color: #333;
-    /* Change background on hover */
-}
-
-.contact-button:hover .button-text {
-    opacity: 1;
-    max-width: 200px;
-    /* Adjust as needed */
-}
-
-.contact-button:hover .icon-whatsapp {
-    transform: translateX(-10px);
-    /* Moves icon left on hover */
-}
 
 .service {
     display: grid;
@@ -703,7 +796,7 @@ body {
 
         &:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 12px #A23731;
+            box-shadow: 0 8px 12px #e63946;
         }
 
         p {

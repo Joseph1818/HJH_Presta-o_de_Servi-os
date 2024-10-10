@@ -11,7 +11,7 @@ import image3 from "../assets/main.jpg"
 import clean from "../assets/clean.jpg"
 import fixe from "../assets/reparat.jpg"
 import instalation from "../assets/instalation.jpg"
-import  repair  from "../assets/reparation.jpg"
+import repair from "../assets/reparation.jpg"
 import { FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importing Font Awesome icons
 import { useInView } from 'react-intersection-observer';
 import 'slick-carousel/slick/slick.css';
@@ -138,83 +138,83 @@ function Home() {
         </header>
         <section className="content-wrapper">
           <div className="content">
- <img src={image3}  alt="Technician repairing an air conditioner" className="hero-image" />
-  <div className="hero-text">
-    <h1>Seu conforto e economia, nossa prioridade!</h1>
-<button className="contact-button cta-button">
-              <img src={whatsapp} className=" icon-whatsapp" alt="WhatsApp" />
+            <img src={image3} alt="Technician repairing an air conditioner" className="hero-image" />
+            <div className="hero-text">
+              <h1>Seu conforto e economia, nossa prioridade!</h1>
+              <button className="contact-button-content">
+              <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
               ENTRE EM CONTATO
             </button>  </div>
 
 
-            
+
           </div>
         </section>
 
- <section className="who-we-are-section">
-  <div className="who-we-are-content">
-    <div className="who-we-are-text">
-      <h1>Quem Somos?</h1>
-      <p>
-        A HJH. Prestação de Serviços é especialista em manutenção de sistemas de ar condicionado, 
-        câmaras frigoríficas e soluções de auto frio. Oferecemos serviços de alta qualidade para garantir 
-        o seu conforto, economia de energia e prolongar a vida útil dos seus equipamentos.
-      </p>
-      <button className="cta-button">Conheça Nossos Serviços</button>
-    </div>
-    <img src={slide2} alt="Air conditioning technician" className=" slider-image who-we-are-image" />
-  </div>
-</section>
+        <section className="who-we-are-section">
+          <div className="who-we-are-content">
+            <div className="who-we-are-text">
+              <h1>Quem Somos?</h1>
+              <p>
+                A HJH. Prestação de Serviços é especialista em manutenção de sistemas de ar condicionado,
+                câmaras frigoríficas e soluções de auto frio. Oferecemos serviços de alta qualidade para garantir
+                o seu conforto, economia de energia e prolongar a vida útil dos seus equipamentos.
+              </p>
+              <button className="cta-button">Conheça Nossos Serviços</button>
+            </div>
+            <img src={slide2} alt="Air conditioning technician" className=" slider-image who-we-are-image" />
+          </div>
+        </section>
 
-<section className="services-section">
-  <h1>Principais Serviços que Oferecemos</h1>
-  <div className="services-grid">
-    <div className="service-item">
-      <img src={repair} className='service-image' alt="Manutenção Preventiva" />
-      <h3>Manutenção Preventiva</h3>
-      <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos de refrigeração e climatização.</p>
-    </div>
-    <div className="service-item">
-      <img src={fixe} alt="Reparos e Correções" />
-      <h3>Reparos e Correções</h3>
-      <p>Resolvemos qualquer problema técnico com agilidade, garantindo que o seu equipamento volte a funcionar em perfeito estado rapidamente.</p>
-    </div>
-    <div className="service-item">
-    <img src={clean} alt="Limpeza e Higienização" />
-      <h3>Limpeza e Higienização</h3>
-      <p>Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de sujeira nos seus sistemas.</p>
-    </div>
-    <div className="service-item">
-      <img src={instalation} alt="Instalação de Novos Equipamentos" />
-      <h3>Instalação de Novos Equipamentos</h3>
-      <p>Soluções personalizadas para cada ambiente, com o dimensionamento adequado para sua casa, empresa ou veículo.</p>
-    </div>
-  </div>
-  <button className="cta-button">Fale Conosco para Mais Detalhes</button>
-</section>
+        <section className="services-section">
+          <h1>Principais Serviços que Oferecemos</h1>
+          <div className="services-grid">
+            <div className="service-item">
+              <img src={repair} className='service-image' alt="Manutenção Preventiva" />
+              <h3>Manutenção Preventiva</h3>
+              <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos de refrigeração e climatização.</p>
+            </div>
+            <div className="service-item">
+              <img src={fixe} alt="Reparos e Correções" />
+              <h3>Reparos e Correções</h3>
+              <p>Resolvemos qualquer problema técnico com agilidade, garantindo que o seu equipamento volte a funcionar em perfeito estado rapidamente.</p>
+            </div>
+            <div className="service-item">
+              <img src={clean} alt="Limpeza e Higienização" />
+              <h3>Limpeza e Higienização</h3>
+              <p>Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de sujeira nos seus sistemas.</p>
+            </div>
+            <div className="service-item">
+              <img src={instalation} alt="Instalação de Novos Equipamentos" />
+              <h3>Instalação de Novos Equipamentos</h3>
+              <p>Soluções personalizadas para cada ambiente, com o dimensionamento adequado para sua casa, empresa ou veículo.</p>
+            </div>
+          </div>
+          <button className="cta-button">Fale Conosco para Mais Detalhes</button>
+        </section>
 
-<section className="why-choose-us">
-  <h1>Vantagens de Trabalhar Conosco</h1>
-  <ul>
-    <li><strong>Técnicos Qualificados e Certificados:</strong> Nossa equipe é composta por profissionais com vasta experiência.</li>
-    <li><strong>Atendimento Rápido e Eficiente:</strong> Garantimos respostas ágeis para que o seu conforto não seja comprometido.</li>
-    <li><strong>Peças Originais e de Alta Qualidade:</strong> Utilizamos somente peças de qualidade superior.</li>
-    <li><strong>Soluções Personalizadas:</strong> Desenvolvemos planos de manutenção ajustados às suas necessidades.</li>
-  </ul>
-</section>
-
-
+        <section className="why-choose-us">
+          <h1>Vantagens de Trabalhar Conosco</h1>
+          <ul>
+            <li><strong>Técnicos Qualificados e Certificados:</strong> Nossa equipe é composta por profissionais com vasta experiência.</li>
+            <li><strong>Atendimento Rápido e Eficiente:</strong> Garantimos respostas ágeis para que o seu conforto não seja comprometido.</li>
+            <li><strong>Peças Originais e de Alta Qualidade:</strong> Utilizamos somente peças de qualidade superior.</li>
+            <li><strong>Soluções Personalizadas:</strong> Desenvolvemos planos de manutenção ajustados às suas necessidades.</li>
+          </ul>
+        </section>
 
 
 
-<section className="extend-equipment">
-  <h1>Prolongue a Vida Útil dos Seus Equipamentos</h1>
-  <p>
-    Prolongue a vida útil dos seus equipamentos de refrigeração com uma manutenção regular e especializada. 
-    Seja no seu carro, empresa, ou casa, a HJH. Prestação de Serviços está pronta para garantir o máximo desempenho.
-  </p>
-  <button className="cta-button">Saiba Mais</button>
-</section>
+
+
+        <section className="extend-equipment">
+          <h1>Prolongue a Vida Útil dos Seus Equipamentos</h1>
+          <p>
+            Prolongue a vida útil dos seus equipamentos de refrigeração com uma manutenção regular e especializada.
+            Seja no seu carro, empresa, ou casa, a HJH. Prestação de Serviços está pronta para garantir o máximo desempenho.
+          </p>
+          <button className="cta-button">Saiba Mais</button>
+        </section>
 
 
 
@@ -258,10 +258,10 @@ function Home() {
           
         </section> */}
 
-        <div className="white-line"></div>
-       
+        {/* <div className="white-line"></div> */}
 
-        <div className="white-line"></div>
+
+        {/* <div className="white-line"></div> */}
         {/* <section className="image-section">
           <div className="child">
             <div className="image-container">
