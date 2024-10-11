@@ -17,7 +17,7 @@ import { useInView } from 'react-intersection-observer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import logo from '../assets/logo2.png'; // Ensure this path is correct
+import logo from '../assets/Logo HJH Vinho.png'; // Ensure this path is correct
 
 function Home() {
   // Adding the state for menu toggle
@@ -138,7 +138,7 @@ function Home() {
         </header>
         <section className="content-wrapper">
           <div className="content">
-            <img src={image3} alt="Technician repairing an air conditioner" className="hero-image" />
+            {/* <img src={image3} alt="Technician repairing an air conditioner" className="hero-image" /> */}
             <div className="hero-text">
               <h1>Seu conforto e economia, nossa prioridade!</h1>
               <button className="contact-button-content">

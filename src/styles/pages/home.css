@@ -48,7 +48,7 @@ body {
 }
 
 .cta-button {
-  background-color: #e63946;
+  background-color: #A23731;
   /* A striking red for the CTA button */
   color: white;
   border: none;
@@ -60,7 +60,7 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #d62828;
+  background-color: #A23731;
   /* Darkens the red on hover */
 }
 
@@ -257,7 +257,7 @@ body {
   position: relative;
   width: 100vw;
   height: 30em;
-  background-image: url("/src/assets/main.jpg");
+  background-image: url("/src/assets/home4.jpg");
   display: flex;
   object-fit: none;
   background-repeat: no-repeat;
@@ -317,8 +317,8 @@ body {
 
 .contact-button {
   background-color: transparent;
-  border: solid 2px #E63946 !important;
-  color: #E63946;
+  border: solid 2px #A23731 !important;
+  color: #A23731;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -336,7 +336,7 @@ body {
 }
 
 .contact-button:hover {
-  background-color: #e63946;
+  background-color: #A23731;
   color: white;
   /* Change background on hover */
 }
@@ -354,8 +354,8 @@ body {
 
 .contact-button-content {
   background-color: transparent;
-  border: solid 2px #E63946 !important;
-  color: #E63946;
+  border: solid 2px #A23731 !important;
+  color: #A23731;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -374,7 +374,7 @@ body {
 }
 
 .contact-button-content:hover {
-  background-color: #e63946;
+  background-color: #A23731;
   color: white;
   /* Change background on hover */
 }
@@ -421,7 +421,7 @@ body {
 
 .service-item h3 {
   font-size: 1.8rem;
-  color: #e63946;
+  color: #A23731;
   margin-bottom: 10px;
 }
 
@@ -431,7 +431,7 @@ body {
 }
 
 .service-item:hover {
-  background-color: #e63946;
+  background-color: #A23731;
   color: #fff;
   transform: translateY(-10px);
 }
@@ -450,7 +450,7 @@ body {
 
 .why-choose-us {
   padding: 40px;
-  border: solid #e63946 1px;
+  border: solid #A23731 1px;
   max-width: 1200px;
   margin: 0 auto;
   background-color: transparent;
@@ -482,14 +482,14 @@ body {
   padding: 15px;
   margin: 10px 0;
   background-color: #fff;
-  border-left: 5px solid #e63946;
+  border-left: 5px solid #A23731;
   border-radius: 5px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .why-choose-us li:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px #e63946;
+  box-shadow: 0 4px 12px #A23731;
 }
 
 /* Animation Keyframes */
@@ -536,7 +536,7 @@ body {
 }
 
 .extend-equipment .cta-button {
-  background-color: #e63946;
+  background-color: #A23731;
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -547,12 +547,12 @@ body {
 }
 
 .extend-equipment .cta-button:hover {
-  background-color: #d62839;
+  background-color: #A23731;
 }
 
 .extend-equipment:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 12px #e63946;
+  box-shadow: 0 6px 12px #A23731;
 }
 
 @keyframes fadeIn {
@@ -577,7 +577,7 @@ body {
 }
 .cta-button {
   padding: 10px 20px;
-  background-color: #e63946;
+  background-color: #A23731;
   color: white;
   border: none;
   border-radius: 5px;
@@ -588,13 +588,13 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #e63946;
+  background-color: #A23731;
 }
 
 .cta-button {
   margin-top: 2rem;
   padding: 0.75rem 2rem;
-  background-color: #e63946;
+  background-color: #A23731;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -603,7 +603,7 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #e63946;
+  background-color: #A23731;
 }
 
 /* Responsive design for smaller screens */
@@ -626,9 +626,9 @@ body {
   justify-content: center;
   position: relative;
   padding: 10px 20px;
-  border: 2px solid #e63946;
+  border: 2px solid #A23731;
   background-color: white;
-  color: #e63946;
+  color: #A23731;
   font-size: 16px;
   border-radius: 25px;
   cursor: pointer;
@@ -660,7 +660,7 @@ body {
 }
 
 .hover-button .btn:hover {
-  background-color: #e63946;
+  background-color: #A23731;
   color: white;
 }
 
@@ -717,7 +717,7 @@ body {
 }
 .service .child:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px #e63946;
+  box-shadow: 0 8px 12px #A23731;
 }
 .service .child p {
   font-size: 13px;
@@ -958,7 +958,7 @@ body {
 /* Center the submit button */
 .submit-button {
   padding: 0.75rem 2rem;
-  background-color: #e63946;
+  background-color: #A23731;
   /* Orange background */
   color: white;
   border: none;
@@ -989,7 +989,7 @@ body {
 }
 
 .footer {
-  background-color: #e63946;
+  background-color: #A23731;
   color: #fff;
   padding: 20px 0;
   text-align: center;
