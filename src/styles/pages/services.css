@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0;
+  width: 100vw;
+  margin-bottom: 1.9em;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hero .hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.hero .hero-content h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+@media (min-width: 640px) {
+  .hero .hero-content h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .hero .hero-content h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.services-grid {
+  padding: 2rem 0;
+}
+.services-grid .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.services-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.services-grid .service-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.services-grid .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.services-grid .service-card .card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 1rem;
+}
+.card-content .icon-wrapper {
+  margin-bottom: 0.5rem;
+}
+.card-content h3 {
+  font-size: 1.2rem;
+  color: #A23731;
+  margin-bottom: 10px;
+}
+.card-content p {
+  font-size: 1.1rem;
+  color: #555;
+}

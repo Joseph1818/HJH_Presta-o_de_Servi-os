@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import clim from "../assets/download.jpeg"
 import whatsapp from "../assets/whatsapp.png"
 import image1 from "../assets/download.jpeg"
 import image2 from "../assets/repair.jpg"
 import slide1 from "../assets/slide1.jpg"
-import slide2 from "../assets/slide2.jpg"
+import slide2 from "../assets/fixingCar.jpg"
 import slide3 from "../assets/slide3.jpg"
 import image3 from "../assets/main.jpg"
 import clean from "../assets/clean.jpg"
-import fixe from "../assets/reparat.jpg"
+import fixe from "../assets/fixingcar2.jpg"
 import instalation from "../assets/instalation.jpg"
 import repair from "../assets/reparation.jpg"
-import { FaFacebook, FaWhatsapp, FaEnvelope } from 'react-icons/fa'; // Importing Font Awesome icons
 import { useInView } from 'react-intersection-observer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-import logo from '../assets/Logo HJH Vinho.png'; // Ensure this path is correct
+import logo from '../assets/Logo HJH Vinho.png'; 
+import Navbar from '../layouts/NavBar';
 
 function Home() {
   // Adding the state for menu toggle
@@ -114,28 +113,8 @@ function Home() {
     <>
 
       <main className="main-container">
-        <header className="top-bar-main">
-          <div className="top-bar">
-            <div className="logo">
-              <img src={logo} alt="Logo" />
-            </div>
-            <nav className={`navigation ${isMenuOpen ? 'active' : ''}`}>
-              <a href="#" onClick={toggleMenu}>Home</a>
-              <a href="#" onClick={toggleMenu}>serviços</a>
-              <a href="#" onClick={toggleMenu}>Produção</a>
-              <a href="#" onClick={toggleMenu}>Contate-nos</a>
-            </nav>
-            <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-              <span className="bar"></span>
-              <span className="bar"></span>
-              <span className="bar"></span>
-            </div>
-            <button className="contact-button">
-              <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
-              ENTRE EM CONTATO
-            </button>
-          </div>
-        </header>
+
+       
         <section className="content-wrapper">
           <div className="content">
             {/* <img src={image3} alt="Technician repairing an air conditioner" className="hero-image" /> */}
@@ -396,24 +375,7 @@ function Home() {
             )}
           </div>
         </section>
-        <footer className="footer">
-          <div className="footer-container">
-            <div className="footer-social">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <FaFacebook />
-              </a>
-              <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <FaWhatsapp />
-              </a>
-              <a href="mailto:youremail@example.com" className="social-icon">
-                <FaEnvelope />
-              </a>
-            </div>
-            <div className="footer-copyright">
-              &copy; {new Date().getFullYear()} Só-Frio. Todos os direitos reservados.
-            </div>
-          </div>
-        </footer>
+       
 
       </main>
     </>
