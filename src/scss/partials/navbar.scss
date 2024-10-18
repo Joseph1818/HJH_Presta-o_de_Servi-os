@@ -81,7 +81,7 @@
         gap: 4rem;
 
         a {
-            color: #E63946;
+            color: white;
             text-decoration: none;
             font-weight: 500;
             font-size: 1.2rem;
@@ -96,7 +96,7 @@
                 bottom: -4px; // Position the underline just below the text
                 width: 0;
                 height: 2px;
-                background-color: white; // The color of the underline
+                background-color: #A23731; // The color of the underline
                 transition: width 0.3s ease;
             }
 

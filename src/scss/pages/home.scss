@@ -336,13 +336,13 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.service-item h3 {
-    font-size: 1.8rem;
+.card-text h3 {
+    font-size: 1.5rem;
     color: #A23731;
     margin-bottom: 10px;
 }
 
-.service-item p {
+.card-content p {
     font-size: 1.1rem;
     color: #555;
 }

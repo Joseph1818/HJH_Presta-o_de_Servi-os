@@ -7,7 +7,7 @@ export const services = [
     {
       title: 'LIMPEZA E HIGIENIZAÇÃO',
       description: 'Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de sujeira nos seus sistemas.',
-      image: '../assets/fixingcar2.jpg'
+      image: '../assets/tecnico.png'
     },
     {
       title: 'REPAROS E CORREÇÕES',

@@ -1,38 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import clim from "../assets/download.jpeg"
 import whatsapp from "../assets/whatsapp.png"
-import image1 from "../assets/download.jpeg"
-import image2 from "../assets/repair.jpg"
 import slide1 from "../assets/slide1.jpg"
 import slide2 from "../assets/fixingCar.jpg"
 import slide3 from "../assets/slide3.jpg"
-import image3 from "../assets/main.jpg"
 import clean from "../assets/clean.jpg"
 import fixe from "../assets/fixingcar2.jpg"
 import instalation from "../assets/instalation.jpg"
 import repair from "../assets/reparation.jpg"
-import { useInView } from 'react-intersection-observer';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import logo from '../assets/Logo HJH Vinho.png'; 
-import Navbar from '../layouts/NavBar';
+import {services} from "../data/service_data"
+
 
 function Home() {
   // Adding the state for menu toggle
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to toggle the menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-
-
-
-  const { ref, inView } = useInView({
-    threshold: 0.1, // Trigger when 10% of the element is in view
-  });
+ 
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -148,26 +132,19 @@ function Home() {
         <section className="services-section">
           <h1>Principais Serviços que Oferecemos</h1>
           <div className="services-grid">
-            <div className="service-item">
-              <img src={repair} className='service-image' alt="Manutenção Preventiva" />
-              <h3>Manutenção Preventiva</h3>
-              <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos de refrigeração e climatização.</p>
-            </div>
-            <div className="service-item">
-              <img src={fixe} alt="Reparos e Correções" />
-              <h3>Reparos e Correções</h3>
-              <p>Resolvemos qualquer problema técnico com agilidade, garantindo que o seu equipamento volte a funcionar em perfeito estado rapidamente.</p>
-            </div>
-            <div className="service-item">
-              <img src={clean} alt="Limpeza e Higienização" />
-              <h3>Limpeza e Higienização</h3>
-              <p>Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de sujeira nos seus sistemas.</p>
-            </div>
-            <div className="service-item">
-              <img src={instalation} alt="Instalação de Novos Equipamentos" />
-              <h3>Instalação de Novos Equipamentos</h3>
-              <p>Soluções personalizadas para cada ambiente, com o dimensionamento adequado para sua casa, empresa ou veículo.</p>
-            </div>
+            {services.map((service, index)=> (
+                 <div key={index} className="service-item">
+                 <img 
+                   className="service-image" 
+                   src={service.image} 
+                   alt={service.title}
+                 />
+                 <div className="card-text">
+                   <h3>{service.title}</h3>
+                   <p>{service.description}</p>
+                 </div>
+               </div>
+            ))}
           </div>
           <button className="cta-button">Fale Conosco para Mais Detalhes</button>
         </section>
@@ -194,78 +171,6 @@ function Home() {
           </p>
           <button className="cta-button">Saiba Mais</button>
         </section>
-
-
-
-
-        {/* <section ref={ref} className={`service box ${inView ? 'visible' : ''}`} >
-          <div className='child'>
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 1" />
-            </div>
-            <p>Garantimos a eficiência contínua e a durabilidade prolongada dos seus equipamentos
-              de refrigeração e climatização.
-            </p>
-          </div>
-          <div className='child'>
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 2" />
-            </div>
-            <p>
-              Resolvemos qualquer problema técnico com agilidade, garantindo que o seu
-              equipamento volte a funcionar em perfeito estado rapidamente.
-            </p>
-          </div>
-          <div className='child'>
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 3" />
-            </div>
-            <p>
-              Mantemos o ar limpo e saudável, eliminando impurezas e prevenindo o acúmulo de
-              sujeira nos seus sistemas.
-            </p>
-          </div>
-          <div className='child'>
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 4" />
-            </div>
-            <p> Soluções personalizadas para cada ambiente, com o dimensionamento adequado para
-              sua casa, empresa ou veículo.
-
-            </p>
-          </div>
-          
-        </section> */}
-
-        {/* <div className="white-line"></div> */}
-
-
-        {/* <div className="white-line"></div> */}
-        {/* <section className="image-section">
-          <div className="child">
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 1" />
-            </div>
-          </div>
-          <div className="child">
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 2" />
-            </div>
-          </div>
-          <div className="child">
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 3" />
-            </div>
-          </div>
-
-          <div className="child">
-            <div className="image-container">
-              <img src={logo} className="logo2" alt="Service 5" />
-            </div>
-          </div>
-        </section> */}
-
-
 
         <section className="contact-us-section">
           <div className="contact-container">
