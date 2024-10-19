@@ -13,65 +13,78 @@ import {services} from "../data/service_data"
 
 
 function Home() {
-  // Adding the state for menu toggle
-
-  // Function to toggle the menu
- 
-
-  const [formData, setFormData] = useState({
-    fullName: '',
-    company: '',
-    address: '',
-    city: '',
-    phone: '',
-    email: '',
-    observations: '',
-  });
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // Form validation logic
-  const validateForm = () => {
-    let formErrors = {};
-    const phoneRegex = /^[0-9\b]+$/; // Only allow numbers in phone
-
-    if (!formData.fullName) formErrors.fullName = 'Nome Completo é obrigatório';
-    if (!formData.address) formErrors.address = 'Endereço é obrigatório';
-    if (!formData.city) formErrors.city = 'Cidade é obrigatória';
-    if (!formData.phone || !phoneRegex.test(formData.phone)) {
-      formErrors.phone = 'Telefone é obrigatório e deve ser válido';
-    }
-    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      formErrors.email = 'Email é obrigatório e deve ser válido';
-    }
-    if (!formData.observations) formErrors.observations = 'Observações são obrigatórias';
-
-    return formErrors;
-  };
-
-  // Handle input change
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+    const [formData, setFormData] = useState({
+      fullName: '',
+      company: '',
+      address: '',
+      city: '',
+      phone: '',
+      email: '',
+      observations: '',
     });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formErrors = validateForm();
-    if (Object.keys(formErrors).length === 0) {
-      // Form is valid - submit data
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-    } else {
-      // Set errors for invalid fields
-      setErrors(formErrors);
-    }
-  };
-
+  
+    const [errors, setErrors] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+  
+    // Form validation logic
+    const validateForm = () => {
+      let formErrors = {};
+      const phoneRegex = /^[0-9\b]+$/; // Allow only numbers
+  
+      if (!formData.fullName) formErrors.fullName = 'Nome Completo é obrigatório';
+      if (!formData.address) formErrors.address = 'Endereço é obrigatório';
+      if (!formData.city) formErrors.city = 'Cidade é obrigatória';
+      if (!formData.phone || !phoneRegex.test(formData.phone)) {
+        formErrors.phone = 'Telefone é obrigatório e deve ser válido';
+      }
+      if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+        formErrors.email = 'Email é obrigatório e deve ser válido';
+      }
+      if (!formData.observations) formErrors.observations = 'Observações são obrigatórias';
+  
+      return formErrors;
+    };
+  
+    // Handle input change
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    // Handle form submission
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formErrors = validateForm();
+  
+      if (Object.keys(formErrors).length === 0) {
+        // Construct mailto link with encoded data
+        const subject = encodeURIComponent('Orçamento Solicitação');
+        const body = encodeURIComponent(`
+          Nome Completo: ${formData.fullName}
+          Empresa: ${formData.company}
+          Endereço: ${formData.address}
+          Cidade: ${formData.city}
+          Telefone: ${formData.phone}
+          Email: ${formData.email}
+          Observações: ${formData.observations}
+        `);
+  
+        window.location.href = `mailto:geral@hjh.ao?subject=${subject}&body=${body}`;
+  
+        // Reset form and show success message
+        setFormData({
+          fullName: '',
+          company: '',
+          address: '',
+          city: '',
+          phone: '',
+          email: '',
+          observations: '',
+        });
+        setIsSubmitted(true);
+      } else {
+        setErrors(formErrors);
+      }
+    };
   const images = [slide1, slide2, slide3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -104,7 +117,7 @@ function Home() {
             {/* <img src={image3} alt="Technician repairing an air conditioner" className="hero-image" /> */}
             <div className="hero-text">
               <h1>Seu conforto e economia, nossa prioridade!</h1>
-              <button className="contact-button-content">
+              <button className="contact-btn">
               <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
               ENTRE EM CONTATO
             </button>  </div>
@@ -281,6 +294,7 @@ function Home() {
           </div>
         </section>
        
+   
 
       </main>
     </>

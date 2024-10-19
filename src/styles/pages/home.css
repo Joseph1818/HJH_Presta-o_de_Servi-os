@@ -82,13 +82,16 @@ body {
   }
 }
 .who-we-are-section {
-  padding: 40px;
+  padding: 40px 20px;
+  /* Add some padding for smaller screens */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .who-we-are-content {
+  padding: 3em;
+  /* Reduce padding for smaller screens */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -113,6 +116,41 @@ body {
   margin-bottom: 20px;
 }
 
+.cta-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .who-we-are-content {
+    flex-direction: column;
+    /* Stack elements vertically */
+    padding: 2em;
+    /* Adjust padding for smaller screens */
+  }
+  .who-we-are-text h1 h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .who-we-are-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .who-we-are-text p {
+    font-size: 1rem;
+    text-align: center;
+    /* Adjust paragraph size */
+  }
+  .slider-image {
+    max-width: 100%;
+    /* Ensure the image doesn't overflow */
+    height: auto;
+    margin-top: 20px;
+    /* Add spacing between text and image */
+  }
+}
 .cta-button {
   padding: 10px 20px;
   background-color: #f44336;
@@ -211,12 +249,10 @@ body {
 }
 
 .contact-button {
-  background-color: transparent;
-  border: solid 2px #A23731 !important;
-  color: #A23731;
+  background-color: #A23731;
+  color: white;
   padding: 0.8rem 1.5rem;
   border: none;
-  background-color: #A23731;
   color: white;
   border-radius: 5px;
   display: flex;
@@ -243,10 +279,9 @@ body {
   /* Moves icon left on hover */
 }
 
-.contact-button-content {
-  background-color: transparent;
-  border: solid 2px #A23731 !important;
-  color: #A23731;
+.contact-btn {
+  background-color: #A23731;
+  color: white;
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -258,27 +293,14 @@ body {
   font-family: "Montserrat", sans-serif;
   transition: background-color 0.3s ease;
 }
-.contact-button-content .icon-whatsapp {
+.contact-btn .icon-whatsapp {
   width: 20px;
   height: 20px;
   margin-right: 0.5rem;
 }
 
-.contact-button-content:hover {
-  background-color: #A23731;
-  color: white;
-  /* Change background on hover */
-}
-
-.contact-button-content:hover .button-text {
-  opacity: 1;
-  max-width: 200px;
-  /* Adjust as needed */
-}
-
-.contact-button-content:hover .icon-whatsapp {
+.contact-btn:hover .icon-whatsapp {
   transform: translateX(-10px);
-  /* Moves icon left on hover */
 }
 
 .services-section {
@@ -683,7 +705,7 @@ body {
 }
 
 .slider-image {
-  width: 600px;
+  width: 100%;
   /* Adjust the size to your needs */
   height: auto;
   transition: transform 0.5s ease;
@@ -879,42 +901,6 @@ body {
   font-weight: bold;
 }
 
-.footer {
-  background-color: #A23731;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-social {
-  margin-bottom: 10px;
-}
-
-.social-icon {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: #A23731;
-}
-
-.footer-copyright {
-  font-size: 14px;
-}
-
 /* Mobile styles */
 @media (max-width: 600px) {
   .contact-container {
@@ -957,4 +943,37 @@ body {
     text-align: center;
     font-size: clamp(1.8rem, 5rem + 0vw, 1rem);
   }
+  .content-wrapper {
+    height: 150vh;
+    /* Full viewport height on smaller screens */
+    background-size: cover;
+    /* Adjusts size to maintain aspect ratio */
+    background-position: center;
+    /* Keeps the focus in the center */
+    padding: 1rem 1em;
+    /* Reduce padding for mobile */
+  }
+}
+.contact-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+.contact-info a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
