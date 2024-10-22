@@ -8,15 +8,13 @@ export default function BottomNav() {
     location.pathname === "/client_portal/" ? null :
 <footer className="footer">
   <div className="footer-container">
-    <div className="footer-contact">
-      <p>📞 +244 944 691 / 951 665 322</p>
-    </div>
 
     <div className="footer-social">
       <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
         <FaFacebook />
       </a>
-      <a href="https://wa.me/944691322" target="_blank" rel="noopener noreferrer" className="social-icon">
+      <a href="https://wa.me/244944691783?text=Olá,%20gostaria%20de%20mais%20detalhes%20sobre%20os%20serviços!',
+              '_blank" target="_blank" rel="noopener noreferrer" className="social-icon">
         <FaWhatsapp />
       </a>
       <a href="mailto:geral@hjh.ao" className="social-icon">

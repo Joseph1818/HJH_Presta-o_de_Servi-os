@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import WebLayout from "./layouts/WebLayout";
 import Home from "./pages/Home";
 import Service from './pages/Service';
+import ContactPage from "./pages/ContactPage ";
 import "./scss/pages/home.scss";
 import "./styles/main.css";
 import "./scss/partials/navbar.scss";
@@ -23,6 +24,7 @@ root.render(
       <Route element={<WebLayout />}>
         <Route path="" element={<Home/>} />
         <Route path="/service" element={<Service/>} />
+        <Route path="/Contact_us" element={<ContactPage/>} />
       </Route>
     </Routes>
   </Router>

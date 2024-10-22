@@ -42,15 +42,21 @@ function Navbar() {
         <nav className={`navigation ${isMenuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={toggleMenu}>Home</Link>
           <Link to="/service" onClick={toggleMenu}>Serviços</Link>
-          <Link to="/producao" onClick={toggleMenu}>Produção</Link>
-          <Link to="/contato" onClick={toggleMenu}>Contate-nos</Link>
+          <Link to="/Contact_us" onClick={toggleMenu}>Contate-nos</Link>
         </nav>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <button className="contact-button">
+        <button className="contact-button"
+          onClick={() => {
+            window.open(
+              'https://wa.me/244944691783?text=Olá,%20gostaria%20de%20mais%20informações!',
+              '_blank'
+            );
+          }}
+        >
           <img src={whatsapp} className="icon-whatsapp" alt="WhatsApp" />
           ENTRE EM CONTATO
         </button>
