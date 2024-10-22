@@ -23,7 +23,7 @@ export default function BottomNav() {
     </div>
 
     <div className="footer-copyright">
-      &copy; {new Date().getFullYear()} Só-Frio. Todos os direitos reservados.
+    <p>&copy; {new Date().getFullYear()} HJH. Todos os direitos reservados.</p>
     </div>
   </div>
 </footer>
